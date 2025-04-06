@@ -289,3 +289,7 @@ function simple_jwt_login_oauth_shortcode($parameter = null)
 include_once 'routes/api.php';
 include_once '3rd-party/force_login.php';
 include_once "3rd-party/wp-graphql.php";
+
+// Initialize JWT Session handling (for standard WordPress login)
+use SimpleJWTLogin\Modules\SimpleJWTLoginSession;
+SimpleJWTLoginSession::init();
