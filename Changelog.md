@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 3.6.4 (17 Apr 2025)
+- Update WordPress 6.8 Compatibility
+
+## 3.6.3 (15 Apr 2025)
+- Fix protect endpoints [#149](https://github.com/nicumicle/simple-jwt-login/issues/149)
+
+## 3.6.2 (09 Apr 2025)
+- Fix blocked backened endpoints by ProtectEndpoints [#146](https://github.com/nicumicle/simple-jwt-login/issues/146)
+- Ensure Protect endpoints searches for JWT in session
+
 ## 3.6.1 (02 Apr 2025)
 - Validate JWT on protect endpoints[#141](https://github.com/nicumicle/simple-jwt-login/issues/141)
 - Fix backward compatibility for protect endpoints. Add `match`/`start_with` option for endpoints.[#143](https://github.com/nicumicle/simple-jwt-login/issues/143)
