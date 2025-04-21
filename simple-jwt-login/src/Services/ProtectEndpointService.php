@@ -46,6 +46,12 @@ class ProtectEndpointService extends BaseService
 
         $parsed = parse_url($currentUrl);
 
+        // Explicitly allow admin-ajax.php requests before any other checks
+        if (isset($parsed['path']) && strpos($parsed['path'], '/wp-admin/admin-ajax.php') === 0) {
+            return true; // Grant access immediately for admin-ajax.php
+        }
+
+
         $path  = rtrim(str_replace($documentRoot, '', ABSPATH), '/');
         $path = str_replace($path . '/wp-json', '', $parsed['path']);
 
@@ -92,6 +98,11 @@ class ProtectEndpointService extends BaseService
     {
         if (strpos($endpoint, '/') !== 0) {
             $endpoint = '/' . $endpoint;
+        }
+
+        // Explicitly skip admin-ajax.php requests to prevent intermittent 403 errors
+        if (strpos($endpoint, '/wp-admin/admin-ajax.php') === 0) {
+            return false; // Do not protect admin-ajax.php
         }
 
         $action = $this->jwtSettings->getProtectEndpointsSettings()->getAction();
