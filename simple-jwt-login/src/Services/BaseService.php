@@ -191,9 +191,11 @@ abstract class BaseService
 		        }
 	        }
         }
+
         if ($this->jwtSettings->getGeneralSettings()->isJwtFromCookieEnabled()) {
-            if (isset($this->cookie[$this->jwtSettings->getGeneralSettings()->getRequestKeyCookie()])) {
-                return $this->cookie[$this->jwtSettings->getGeneralSettings()->getRequestKeyCookie()];
+            $cookieKey = $this->jwtSettings->getGeneralSettings()->getRequestKeyCookie();
+            if (isset($_COOKIE[$cookieKey])) {
+                return $_COOKIE[$cookieKey];
             }
         }
 

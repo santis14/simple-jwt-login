@@ -1,0 +1,25 @@
+{
+    "deploy.reloaded": {
+        "packages": [
+            {
+                "name": "Version 2.3.4",
+                "description": "Package version 2.3.4",
+                "files": [
+                    "**/*.*"
+                ],
+                "deployOnSave": ["SondertTest"]
+            }
+        ],
+        "targets": [
+            {
+                "type": "sftp",
+                "name": "SondertTest",
+                "description": "A SFTP folder",
+                "dir": "/var/www/vhosts/sondert.com/cursostest.sondert.com/wp-content/plugins/simple-jwt-login/",
+                "host": "sondert.com", "port": 22,
+                "user": "root", "password": "123ElSantiSape@",
+                "checkBeforeDeploy": true,
+            }
+        ]
+    }
+}
