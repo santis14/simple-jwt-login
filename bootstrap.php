@@ -15,7 +15,8 @@ if (! function_exists('__')) {
     }
 }
 if (! function_exists('esc_html')) {
-    function esc_html($text) {
+    function esc_html($text)
+    {
         return $text;
     }
 }
@@ -66,7 +67,7 @@ if (!function_exists('get_user_meta')) {
 
 
 if (!function_exists('do_action')) {
-    function do_action($actionName, $arg1 = null, $arg2 = null, $arg3 = null, $arg4=null)
+    function do_action($actionName, $arg1 = null, $arg2 = null, $arg3 = null, $arg4 = null)
     {
     }
 }
@@ -147,6 +148,13 @@ if (!function_exists('esc_attr')) {
     }
 }
 
+if (!function_exists('esc_attr__')) {
+    function esc_attr__($parameter, $domain)
+    {
+        return $parameter;
+    }
+}
+
 if (!function_exists('esc_url')) {
     function esc_url($parameter)
     {
@@ -189,45 +197,49 @@ if (!function_exists('wp_check_password')) {
 }
 
 if (!function_exists('apply_filters')) {
-    function apply_filters($name, $option1=null, $option2=null, $option3=null, $option4=null)
+    function apply_filters($name, $option1 = null, $option2 = null, $option3 = null, $option4 = null)
     {
     }
 }
 
 if (!function_exists('check_password_reset_key')) {
-    function check_password_reset_key($code, $email){
-
+    function check_password_reset_key($code, $email)
+    {
     }
 }
 
 if (!function_exists('get_password_reset_key')) {
-    function get_password_reset_key($user){
-
+    function get_password_reset_key($user)
+    {
     }
 }
 if (!function_exists('retrieve_password')) {
-    function  retrieve_password($username) {
-
+    function retrieve_password($username)
+    {
     }
 }
 
 if (!function_exists('wp_email')) {
-    function wp_mail($sendTo, $emailSubject, $emailBody, $headers = []) {
+    function wp_mail($sendTo, $emailSubject, $emailBody, $headers = [])
+    {
     }
 }
 
 if (!function_exists('reset_password')) {
-    function reset_password($user, $newPassword) {
+    function reset_password($user, $newPassword)
+    {
     }
 }
 
 if (!function_exists('wp_nonce_field')) {
-    function wp_nonce_field($nonceName) {
+    function wp_nonce_field($nonceName)
+    {
     }
 }
 
 if (!function_exists('wp_verify_nonce')) {
-    function wp_verify_nonce($nonceValue, $nonceName){
+    function wp_verify_nonce($nonceValue, $nonceName)
+    {
         return true;
     }
 }
@@ -250,7 +262,8 @@ if (!function_exists('role_exists')) {
      * @param string $role
      * @return bool
      */
-    function role_exists($role) {
+    function role_exists($role)
+    {
         return true;
     }
 }
@@ -260,7 +273,8 @@ if (!function_exists('plugin_dir_path')) {
      * @param string|null $path
      * @return string
      */
-    function plugin_dir_path($path = null) {
+    function plugin_dir_path($path = null)
+    {
         return "";
     }
 }
@@ -270,7 +284,8 @@ if (!function_exists('plugin_dir_url')) {
      * @param string $file
      * @return string
      */
-    function plugin_dir_url( $file ) {
+    function plugin_dir_url($file)
+    {
         return '';
     }
 }
@@ -279,7 +294,8 @@ if (!function_exists('delete_option')) {
      * @param string $option
      * @return bool
      */
-    function delete_option($option) {
+    function delete_option($option)
+    {
         return true;
     }
 }
@@ -289,7 +305,8 @@ if (!function_exists('register_uninstall_hook')) {
      * @param string|null $file
      * @param string|null $callable
      */
-    function register_uninstall_hook($file, $callable) {
+    function register_uninstall_hook($file, $callable)
+    {
     }
 }
 
@@ -301,7 +318,8 @@ if (!function_exists('add_action')) {
      * @param int $accepted_args
      * @return void
      */
-    function add_action($hook_name, $callback, $priority = 10, $accepted_args = 1) {
+    function add_action($hook_name, $callback, $priority = 10, $accepted_args = 1)
+    {
     }
 }
 
@@ -313,7 +331,8 @@ if (!function_exists('add_filter')) {
      * @param int $accepted_args
      * @return true
      */
-    function add_filter($hook_name, $callback,$priority = 10, $accepted_args = 1 ){
+    function add_filter($hook_name, $callback, $priority = 10, $accepted_args = 1)
+    {
         return true;
     }
 }
@@ -324,7 +343,8 @@ if (!function_exists('plugins_url')) {
      * @param string $plugin
      * @return string
      */
-    function plugins_url($path = '', $plugin = '' ) {
+    function plugins_url($path = '', $plugin = '')
+    {
         return  '';
     }
 }
@@ -340,7 +360,8 @@ if (!function_exists('add_menu_page')) {
      * @param int|float|null $position
      * @return string
      */
-    function add_menu_page($page_title, $menu_title, $capability, $menu_slug, $callback = '', $icon_url = '', $position = null ) {
+    function add_menu_page($page_title, $menu_title, $capability, $menu_slug, $callback = '', $icon_url = '', $position = null)
+    {
         return '';
     }
 }
@@ -352,7 +373,7 @@ if (!function_exists('load_plugin_textdomain')) {
      * @param string|false $plugin_rel_path
      * @return bool
      */
-    function load_plugin_textdomain( $domain, $deprecated = false, $plugin_rel_path = false )
+    function load_plugin_textdomain($domain, $deprecated = false, $plugin_rel_path = false)
     {
         return true;
     }
@@ -367,7 +388,7 @@ if (!function_exists('wp_enqueue_style')) {
      * @param string $media
      * @return void
      */
-    function wp_enqueue_style( $handle, $src = '', $deps = array(), $ver = false, $media = 'all' )
+    function wp_enqueue_style($handle, $src = '', $deps = array(), $ver = false, $media = 'all')
     {
     }
 }
@@ -381,7 +402,8 @@ if (!function_exists('wp_enqueue_script')) {
      * @param bool $in_footer
      * @return void
      */
-    function wp_enqueue_script( $handle, $src = '', $deps = array(), $ver = false, $in_footer = false ) {
+    function wp_enqueue_script($handle, $src = '', $deps = array(), $ver = false, $in_footer = false)
+    {
     }
 }
 
@@ -390,7 +412,8 @@ if (!function_exists('plugin_basename')) {
      * @param string $file
      * @return string
      */
-    function plugin_basename( $file ) {
+    function plugin_basename($file)
+    {
         return '';
     }
 }
@@ -401,7 +424,8 @@ if (!function_exists('add_shortcode')) {
      * @param callable $callback
      * @return void
      */
-    function add_shortcode($tag, $callback) {
+    function add_shortcode($tag, $callback)
+    {
     }
 }
 
@@ -412,7 +436,8 @@ if (!function_exists('get_plugin_data')) {
      * @param bool $translate
      * @return array
      */
-    function get_plugin_data($plugin_file, $markup = true, $translate = true ) {
+    function get_plugin_data($plugin_file, $markup = true, $translate = true)
+    {
         return [];
     }
 }
@@ -424,7 +449,8 @@ if (!function_exists('wp_send_json_error')) {
      * @param int $options
      * @return void
      */
-    function wp_send_json_error($data = null, $status_code = null, $options = 0 ){
+    function wp_send_json_error($data = null, $status_code = null, $options = 0)
+    {
     }
 }
 
@@ -434,14 +460,15 @@ if (!function_exists('home_url')) {
      * @param string|null $scheme
      * @return string
      */
-    function home_url($path = '', $scheme = null ) {
+    function home_url($path = '', $scheme = null)
+    {
         return '';
     }
 }
 
 if (!function_exists('wp_login_url')) {
-    function wp_login_url(){
-
+    function wp_login_url()
+    {
     }
 }
 
@@ -453,7 +480,8 @@ if (!function_exists('register_rest_route')) {
      * @param bool $override
      * @return bool
      */
-    function register_rest_route($namespace, $route, $args = array(), $override = false ) {
+    function register_rest_route($namespace, $route, $args = array(), $override = false)
+    {
         return true;
     }
 }
@@ -462,23 +490,27 @@ if (!function_exists('is_user_logged_in')) {
     /**
      * @return bool
      */
-    function is_user_logged_in(){
+    function is_user_logged_in()
+    {
         return false;
     }
 }
 
 if (!function_exists('wp_remote_request')) {
-    function wp_remote_request($url, $args) {
+    function wp_remote_request($url, $args)
+    {
     }
 }
 
 if (!function_exists('wp_remote_retrieve_response_code')) {
-    function wp_remote_retrieve_response_code($response){
+    function wp_remote_retrieve_response_code($response)
+    {
     }
 }
 
 if (!function_exists('wp_remote_retrieve_body')) {
-    function wp_remote_retrieve_body($response) {
+    function wp_remote_retrieve_body($response)
+    {
     }
 }
 
@@ -498,7 +530,64 @@ if (!class_exists('WP_REST_Response')) {
 if (!class_exists('WP_Error')) {
     class WP_Error
     {
-	    public function __construct( $code = '', $message = '', $data = '' ) {}
+        public function __construct($code = '', $message = '', $data = '')
+        {
+        }
+    }
+}
 
+if (!function_exists('wp_unslash')) {
+    /**
+     * @param string|array $value
+     * @return string|array
+     */
+    function wp_unslash($value) {
+        return $value;
+    }
+}
+
+if (!function_exists('wp_strip_all_tags')) {
+    /**
+     * @param string $text
+     * @param bool $remove_breaks
+     * @return string
+     */
+    function wp_strip_all_tags($text, $remove_breaks = false) {
+        return strip_tags($text);
+    }
+}
+
+if (!function_exists('esc_html__')) {
+    /**
+     * @param string $text
+     * @param string $domain
+     * @return string
+     */
+    function esc_html__($text, $domain = 'default') {
+        return $text;
+    }
+}
+
+if (!function_exists('simple_jwt_login_sanitize_css_value')) {
+    /**
+     * Sanitize CSS property values to prevent XSS attacks.
+     * Removes characters that could break out of CSS context or inject malicious code.
+     *
+     * @param string $value The CSS value to sanitize
+     * @return string The sanitized CSS value
+     */
+    function simple_jwt_login_sanitize_css_value($value)
+    {
+        // Remove any HTML tags
+        $value = wp_strip_all_tags($value);
+
+        // Remove characters that could break out of CSS/HTML context or inject code
+        // This includes: < > " ' ; { } ( ) \ / and backticks
+        $value = preg_replace('/[<>"\';{}()\\\\\/`]/', '', $value);
+
+        // Limit length to prevent abuse
+        $value = substr($value, 0, 100);
+
+        return $value;
     }
 }
