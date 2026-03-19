@@ -51,9 +51,9 @@ class ProtectEndpointService extends BaseService
             return true; // Grant access immediately for admin-ajax.php
         }
 
-
-        $path  = rtrim(str_replace($documentRoot, '', ABSPATH), '/');
-        $path = str_replace($path . '/wp-json', '', $parsed['path']);
+        //Initialize $path safely, checking if 'path' is available in $parsed
+		$basePath  = rtrim(str_replace($documentRoot, '', ABSPATH), '/');
+		$path = isset($parsed['path']) ? str_replace($basePath . '/wp-json', '', $parsed['path']) : '';
 
         $isEndpointsProtected = true;
         if (!empty(trim($path, '/'))) {
