@@ -135,9 +135,10 @@ class SimpleJWTLoginSession
                 $cookie_value = $_COOKIE[ $logged_in_cookie_name ];
                 $parts = explode( '|', $cookie_value );
 
-                // The expiration timestamp is the 4th part (index 3)
-                if ( isset( $parts[3] ) && is_numeric( $parts[3] ) ) {
-                    $wp_session_expiration_timestamp = (int) $parts[3];
+                // The expiration timestamp is the 2nd part (index 1) in WordPress auth cookies:
+                // username|expiration|token|hmac
+                if ( isset( $parts[1] ) && is_numeric( $parts[1] ) ) {
+                    $wp_session_expiration_timestamp = (int) $parts[1];
                     // We can't reliably determine 'remember' status from this cookie value alone here,
                     // but the timestamp itself reflects the correct duration.
                     // error_log( 'SimpleJWTLogin: Got expiration from WordPress logged-in cookie.' ); // Log success
